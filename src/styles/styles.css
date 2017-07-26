@@ -1,0 +1,14 @@
+
+.list-item {
+  display: inline-block;
+}
+
+.right-button {
+  cursor: pointer;
+  float: right;
+}
+
+.left-button {
+  cursor: pointer;
+  float: left;
+}

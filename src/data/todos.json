@@ -1,0 +1,19 @@
+[
+  {
+    "id": 0,
+    "todo": "Wake-Up"
+   
+  },
+  {
+    "id": 1,
+    "todo": "Eat Breakfast"
+  },
+  {
+    "id": 2,
+    "todo": "Go to office"
+  },
+  {
+    "id": 3,
+    "todo": "Sleep"
+  }
+]
