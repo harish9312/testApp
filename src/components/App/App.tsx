@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
-import TODOList from '../TODOList/TODOList';
-import DoneList from '../DoneList/DoneList';
+import { TODOList } from '../TODOList/TODOListView';
+import { DoneList } from '../DoneList/DoneListView';
 import '../../styles/styles.css';
 require('bootstrap/dist/css/bootstrap.css');
 import '../../styles/font-awesome.min.css';

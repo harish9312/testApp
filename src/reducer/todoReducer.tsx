@@ -37,18 +37,19 @@ export function todo(state: IState[] = data, action: TodoAction) {
             return list;
 
         case 'TOBEDONE':
-            list = [...state, done(action.id)];
-            return list;
+            let doneList = [...state, done(action.id)];
+            return doneList;
 
         case 'MOVEUP':
-            list = move(action.type, action.id, state);
-            return list;
+            let newList = move(action.type, action.id, state);
+            return newList;
 
         case 'MOVEDOWN':
-            list = move(action.type, action.id, state);
-            return list;
+            let downList = move(action.type, action.id, state);
+            return downList;
 
         default:
+            console.log(state)
             return state;
     }
 }

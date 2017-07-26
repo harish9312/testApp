@@ -20,8 +20,8 @@ export function done(state: IState[] = [], action: TodoAction) {
         return list;
 
         case 'TOBEDONE':
-        list = state.filter(item => item.id !== action.id);
-        return list;
+        let newList = state.filter(item => item.id !== action.id);
+        return newList;
 
         default: 
         return state;
