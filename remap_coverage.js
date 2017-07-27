@@ -17,7 +17,7 @@ const originalCoverageJson = JSON.parse(isWindows ? originalCoverage.replace(/\\
 const updateCoverageJson = {};
 
 _.forIn(originalCoverageJson, (value, key) => {
-  const updatedKey = key.replace(path.normalize('/src/'), path.normalize('/build/src/')).replace('.ts', '.js');
+  const updatedKey = key.replace(path.normalize('/src/'), path.normalize('/dist/')).replace('.ts', '.js');
   updateCoverageJson[updatedKey] = value;
 });
 

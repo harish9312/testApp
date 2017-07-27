@@ -76,7 +76,7 @@ export class TODOListView extends React.Component<ITODOList, {}> {
 
 }
 
-function mapStateToProps(state: IState) {
+export function mapStateToProps(state: IState) {
     return {
         items: state.todo
     };

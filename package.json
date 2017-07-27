@@ -28,12 +28,15 @@
     "@types/jest": "^20.0.5",
     "@types/node": "^8.0.16",
     "awesome-typescript-loader": "^3.2.1",
+    "babel-jest": "^20.0.3",
     "css-loader": "^0.28.4",
     "enzyme": "^2.9.1",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.29.0",
     "jest": "^20.0.4",
     "jest-css-modules": "^1.1.0",
+    "redux-mock-store": "^1.2.3",
+    "redux-thunk": "^2.2.0",
     "remap-istanbul": "^0.9.5",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.18.2",
@@ -55,14 +58,13 @@
         "tsConfigFile": "tsconfig.json"
       }
     },
-    
     "transform": {
+      "^.+\\.jsx?$": "babel-jest",
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "moduleNameMapper": {
       "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
     },
-    "mapCoverage": true,
     "testMatch": [
       "**/__tests__/**/*.(ts|tsx|js)"
     ]

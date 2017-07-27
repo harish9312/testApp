@@ -1,29 +1,19 @@
 import { TodoAction } from '../actions';
-
-const data = require('../data/todos.json');
-
-interface IState {
-    id: number;
-    todo: string;
-}
-
-function mark(id: number) {
-    let moveToDone = data.find((todo:{id: number}) => todo.id === id);
-    return moveToDone;
-}
+import { IState } from '../../src/interfaces';
+import { mark } from './helperFunctions';
 
 export function done(state: IState[] = [], action: TodoAction) {
 
     switch (action.type) {
         case 'DONE':
-        let list = [...state, mark(action.id)];
-        return list;
+            let list = [...state, mark(action.id)];
+            return list;
 
         case 'TOBEDONE':
-        let newList = state.filter(item => item.id !== action.id);
-        return newList;
+            let newList = state.filter(item => item.id !== action.id);
+            return newList;
 
-        default: 
-        return state;
+        default:
+            return state;
     }
 }
