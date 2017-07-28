@@ -1,0 +1,55 @@
+.form {
+    width: 960px;
+    height: 1034px;
+}
+.AutoComplete {
+   
+    height: 100%;
+    width:100%;
+    line-height: 26px !important;
+}
+.label {
+    padding: 0px !important;
+    font-size: 14px !important; 
+    color: #000000 !important;
+}
+.Chips {
+    margin: 3px 10px 0px 10px;
+    .line{
+    border-bottom: 1px solid;
+    }
+}
+path{
+    width: 1px;
+}
+.chipStyle div span {
+    line-height: 26px !important;
+    float: left;
+}
+
+.chipStyle{
+    display: inline-flex;
+}
+.chip-row span{
+    display: inline-block;
+}
+
+#root {
+
+.form {
+    position: absolute;
+    width: 566px;
+    margin-right: 20px;
+    margin-top: 21px;
+    .line{
+            position: absolute;
+            width: 566px;
+
+    border-bottom: 1.5px solid #D8D8D8;
+    display: block;
+}
+    .Chips{
+        position: relative;
+        width: 566px;
+        height: 119px;
+        }}}
