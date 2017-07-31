@@ -1,6 +1,7 @@
 .form {
     width: 960px;
     height: 1034px;
+    margin-left: 20px;
 }
 .AutoComplete {
    
@@ -12,9 +13,9 @@
     padding: 0px !important;
     font-size: 14px !important; 
     color: #000000 !important;
+    font-weight: normal !important;
 }
 .Chips {
-    margin: 3px 10px 0px 10px;
     .line{
     border-bottom: 1px solid;
     }
@@ -27,14 +28,13 @@ path{
     float: left;
 }
 
-.chipStyle{
-    display: inline-flex;
-}
-.chip-row span{
+.chip-row {
     display: inline-block;
+    height: 26px;
 }
 
 #root {
+.mui-menu-style {display: none}
 
 .form {
     position: absolute;

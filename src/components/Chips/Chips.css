@@ -1,6 +1,7 @@
 .form {
   width: 960px;
-  height: 1034px; }
+  height: 1034px;
+  margin-left: 20px; }
 
 .AutoComplete {
   height: 100%;
@@ -10,12 +11,11 @@
 .label {
   padding: 0px !important;
   font-size: 14px !important;
-  color: #000000 !important; }
+  color: #000000 !important;
+  font-weight: normal !important; }
 
-.Chips {
-  margin: 3px 10px 0px 10px; }
-  .Chips .line {
-    border-bottom: 1px solid; }
+.Chips .line {
+  border-bottom: 1px solid; }
 
 path {
   width: 1px; }
@@ -24,12 +24,12 @@ path {
   line-height: 26px !important;
   float: left; }
 
-.chipStyle {
-  display: inline-flex; }
+.chip-row {
+  display: inline-block;
+  height: 26px; }
 
-.chip-row span {
-  display: inline-block; }
-
+#root .mui-menu-style {
+  display: none; }
 #root .form {
   position: absolute;
   width: 566px;
@@ -39,8 +39,7 @@ path {
     position: absolute;
     width: 566px;
     border-bottom: 1.5px solid #D8D8D8;
-    display: block;
-    margin-left: -10px; }
+    display: block; }
   #root .form .Chips {
     position: relative;
     width: 566px;

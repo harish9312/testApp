@@ -32,3 +32,17 @@ export function moveDown(id: number): ITodo {
         id
     };
 }
+
+export function removeItem(value: string) {
+    return {
+        type: 'REMOVECHIPITEM',
+        value
+    }
+}
+
+export function addChipItem(value: string) {
+    return {
+        type: 'ADDCHIPITEM',
+        value
+    }
+}
