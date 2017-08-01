@@ -1,18 +1,21 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-const data = require('../../data/todos.json');
 import { searchInList } from '../../actions/index';
 
 interface IAutoCompleteProps {
-    handle?: string;
-    chipsData?: IChips[];
-    searchInList?: Function;
+    options?: IOptions[];
+    placeholder?: string;
+    onInputChange?: Function;
+    onItemSelected?: Function;
 }
+
 interface IAutoCompleteStates {
-    visible: boolean;
+    optionsVisibility: boolean;
 }
-interface IChips {
+
+interface IOptions {
+    key?: string;
     value: string;
 }
 
@@ -20,72 +23,81 @@ export class AutoComplete extends React.Component<IAutoCompleteProps, IAutoCompl
 
     constructor(props: any) {
         super(props)
-        //   this.handleInputChange = this.handleInputChange.bind(this);
-        this.renderList = this.renderList.bind(this)
         this.state = {
-            visible: false
+            optionsVisibility: false
         }
-    }
+
+        this.renderList = this.renderList.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.onInputChange = this.onInputChange.bind(this);
+
+    } searchInList
     selectedItem = (item) => {
         alert(item)
     }
 
-    componentDidMount() {
-        console.log(ReactDOM.findDOMNode(this.refs.myList))
+    handleClick = (value) => {
+        if (this.props.onItemSelected === undefined) {
+            console.log("Selected Value", value)
+            this.hideList()
+        }
+        else {
+            this.props.onItemSelected(value);
+            this.hideList()
+        }
+    }
 
+    onInputChange = (event) => {
+        let value = event.target.value
+        if(this.props.onInputChange === undefined){
+            console.log("Input Value", value)
+            
+        }
+        else {
+            this.props.onInputChange(value);
+            this.hideList();
+        }
+    }
+
+    showList = () => {
+        this.setState({
+            optionsVisibility: true
+        })
+    }
+
+    hideList = () => {
+        this.setState({
+            optionsVisibility: false
+        })
     }
 
     renderList() {
-        console.log("Sdsad");
         return (
-            this.props.chipsData.map(item => {
+            this.props.options.map(item => {
                 return (
-                    <div>
+                    <div onMouseDown={() => this.handleClick(item.value)} className="listStyle">
                         {item.value}
                     </div>
                 )
             })
         )
     }
-    handleInputChange = () => {
-        this.setState({
-            visible: true
-        })
-    }
 
-    handleBlur = () => {
-        this.setState({
-            visible: false
-        })
-    }
-    search = (event) => {
-        let val = event.target.value
-        this.props.searchInList(val)
-    }
-  
-
-render() {
-    console.log("Chips Data", this.props.chipsData)
-    return (
-        <div>
-            <input
-                type="text"
-                onClick={() => this.handleInputChange()}
-                onBlur={() => this.handleBlur()}
-                onChange={this.search}
-            />
-            <div ref="myList">
-                {this.state.visible ? this.renderList() : null}
+    render() {
+        console.log("Chips Data", this.props.options)
+        return (
+            <div>
+                <input
+                    type="text"
+                    onClick = {this.showList}
+                    onBlur={this.hideList}
+                    onChange={this.onInputChange}
+                    placeholder={this.props.placeholder ? this.props.placeholder : ''}
+                />
+                <div>
+                    {this.state.optionsVisibility ? this.renderList() : null}
+                </div>
             </div>
-        </div>
-    )
-}
-}
-
-export function mapStateToProps(state: { chipsData: string }) {
-    console.log("Auto Complete", state);
-    return {
-        chipsData: state.chipsData
+        )
     }
 }
-export let AutoCompleteList = connect(mapStateToProps, {searchInList})(AutoComplete as any)

@@ -58,6 +58,7 @@ export class ChipInputForm extends React.Component<IChipInputProps, IChipsState>
         const newFunction = { [functionName]: this.handleNewRequest }
         const { children, ...otherProps } = this.props
         const newChild = React.cloneElement(children as any, newFunction);
+        console.log("New Child",newChild)
         return newChild;
     }
 

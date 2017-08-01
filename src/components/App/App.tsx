@@ -3,7 +3,7 @@ import './App.css';
 import { TODOList } from '../TODOList/TODOListView';
 import { DoneList } from '../DoneList/DoneListView';
 import { ChipInput } from '../Chips/ChipInputForm';
-import { AutoCompleteList } from '../Chips/AutoComplete';
+import { AutoComplete } from '../Chips/AutoComplete';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import '../../styles/styles.css';
 import './App.css'
@@ -23,10 +23,13 @@ class App extends React.Component<{}, {}> {
     }
     render() {
         return (
+           <MuiThemeProvider>
             <div className="form">
-           
-             <AutoCompleteList />
+           <ChipInput handle="onItemSelected">
+             <AutoComplete  options ={[{value:'Apple'},{value:'Ball'}]} />
+           </ChipInput>
             </div>
+            </MuiThemeProvider>
         );
     }
 }
