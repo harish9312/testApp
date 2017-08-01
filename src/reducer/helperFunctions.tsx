@@ -2,7 +2,7 @@ const data = require('../data/todos.json');
 import { IState } from '../../src/interfaces';
 
 export function mark(id: number) {
-    let moveToDone = data.find((todo:{id: number}) => todo.id === id);
+    let moveToDone = data.find((todo: { id: number }) => todo.id === id);
     return moveToDone;
 };
 
@@ -10,6 +10,7 @@ export function done(id: number) {
     let todoItem = data.find((c: { id: number }) => c.id === id);
     return todoItem;
 }
+
 
 export function move(type: string, id: number, state: IState[]) {
 
@@ -26,4 +27,15 @@ export function move(type: string, id: number, state: IState[]) {
         newList.splice(pos + 1, 0, data[id]);
         return newList;
     }
+}
+
+export function  search(searchText) {
+    let list = []
+    let chipsData = [{value:'One'}, {value:'Two'},{value:'Onion'}]
+    console.log(searchText);
+    let inUpperCase = searchText.toUpperCase();
+    console.log(inUpperCase);
+    list = chipsData.filter(item => item.value.toUpperCase().substring(0, searchText.length) === inUpperCase)
+    console.log("List",list)
+    return list;
 }

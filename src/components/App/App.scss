@@ -13,6 +13,24 @@
 p.para{
     margin-right: 25px; 
 }
+input{
+    width: 525px; 
+    border-style: solid; 
+    line-height: 18px; 
+    font-size: 14px; 
+    text-align: left; 
+    padding: 0px; 
+    border-color: rgb(194, 194, 194); 
+    border-radius: 4px; 
+    border-width: 1px; 
+    height: 33px;
+}
+input:focus{
+     outline:none;
+    border-color: rgb(194, 194, 194); ;
+    box-shadow:0 0 10p #ffffff; 
+}
+
 img{
     margin-left: 23px;
     float: left;

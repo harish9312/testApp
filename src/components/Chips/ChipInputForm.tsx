@@ -54,12 +54,10 @@ export class ChipInputForm extends React.Component<IChipInputProps, IChipsState>
     }
 
     renderNewAutoComplete() {
-        const fName = this.props.handle
-        console.log(fName);
-        const newFunction = { [fName]: this.handleNewRequest }
+        const functionName = this.props.handle
+        const newFunction = { [functionName]: this.handleNewRequest }
         const { children, ...otherProps } = this.props
         const newChild = React.cloneElement(children as any, newFunction);
-        console.log("New Child", newChild.props);
         return newChild;
     }
 
@@ -88,7 +86,6 @@ export class ChipInputForm extends React.Component<IChipInputProps, IChipsState>
 }
 
 export function mapStateToProps(state: IChipsState) {
-    console.log("Chips mapState", state.chipsData)
     return {
         chipsData: state.chipsData
     }
@@ -121,7 +118,7 @@ const chipStyle = {
 
 const menuStyle = {
     color: '#000000',
-    height: '100%',
+    height: '1px',
     width: '100%',
     border: '19px',
     padding: '0px',

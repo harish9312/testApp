@@ -46,3 +46,10 @@ export function addChipItem(value: string) {
         value
     }
 }
+
+export function searchInList(value:string) {
+    return {
+        type: 'SEARCHINLIST',
+        value
+    }
+}
