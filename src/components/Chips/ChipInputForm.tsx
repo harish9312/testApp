@@ -74,7 +74,7 @@ export class ChipInputForm extends React.Component<IChipInputProps, IChipsState>
     render() {
         return (
             <div>
-                <div className="">
+                <div className="list-disp">
                     {this.renderNewAutoComplete()}
                     <div className="chipStyle">
                     {this.renderChips()}

@@ -7,7 +7,7 @@ import { AutoComplete } from '../Chips/AutoComplete';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import '../../styles/styles.css';
 import './App.css'
-import '../Chips/Chips.css';
+import '../Chips/Chips.scss';
 const Autocomplete = require('react-autocomplete');
 
 require('bootstrap/dist/css/bootstrap.css');

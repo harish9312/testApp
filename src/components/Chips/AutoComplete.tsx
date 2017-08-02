@@ -39,11 +39,11 @@ export class AutoComplete extends React.Component<IAutoCompleteProps, IAutoCompl
     handleClick = (value) => {
         if (this.props.onItemSelected === undefined) {
             console.log("Selected Value", value)
-            this.hideList()
+            //this.hideList()
         }
         else {
             this.props.onItemSelected(value);
-            this.hideList()
+            //this.hideList()
         }
     }
 
@@ -55,7 +55,6 @@ export class AutoComplete extends React.Component<IAutoCompleteProps, IAutoCompl
         }
         else {
             this.props.onInputChange(value);
-            this.hideList();
         }
     }
 
@@ -75,7 +74,7 @@ export class AutoComplete extends React.Component<IAutoCompleteProps, IAutoCompl
         return (
             this.props.options.map(item => {
                 return (
-                    <div onMouseDown={() => this.handleClick(item.value)} className="listStyle">
+                    <div onMouseDown={() => this.handleClick(item.value)} className="list-style">
                         {item.value}
                     </div>
                 )
@@ -94,7 +93,7 @@ export class AutoComplete extends React.Component<IAutoCompleteProps, IAutoCompl
                     onChange={this.onInputChange}
                     placeholder={this.props.placeholder ? this.props.placeholder : ''}
                 />
-                <div>
+                <div className="list-data">
                     {this.state.optionsVisibility ? this.renderList() : null}
                 </div>
             </div>

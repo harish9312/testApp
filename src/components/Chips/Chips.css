@@ -14,16 +14,22 @@
   color: #000000 !important;
   font-weight: normal !important; }
 
-.listStyle {
-  font-size: 14px;
-  width: 520px;
-  border: 1px solid; }
+.list-data {
+  box-shadow: 2px 2px 1px;
+  width: 520px; }
 
-.listStyle:hover {
+.list-style {
   font-size: 14px;
   width: 520px;
   border: 1px solid;
-  background-color: #D8D8D8; }
+  padding: 5px; }
+
+.list-style:hover {
+  font-size: 14px;
+  width: 520px;
+  border: 1px solid;
+  background-color: #D8D8D8;
+  cursor: pointer; }
 
 .Chips .line {
   border-bottom: 1px solid; }
